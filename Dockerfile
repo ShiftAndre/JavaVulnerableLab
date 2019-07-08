@@ -6,7 +6,7 @@ ARG token
 RUN echo "using org ID $org and token $token"
 
 ### Dependencies
-RUN curl -L https://stg.shiftleft.io/download/sl-latest-linux-x64.tar.gz | tar xvz -C /usr/local/bin
+RUN curl -L https://www.shiftleft.io/download/sl-latest-linux-x64.tar.gz | tar xvz -C /usr/local/bin
 RUN apt-get update; apt-get install maven default-jdk -y; update-alternatives --config javac
 
 RUN sl --no-diagnostic auth --org "$org" --token "$token"
