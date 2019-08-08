@@ -3,7 +3,6 @@ action "Docker build" {
   args = "build -t jvl ."
   secrets = ["org", "token"]
 }
-
 workflow "Build" {
   on = "push"
   resolves = ["Docker build"]
