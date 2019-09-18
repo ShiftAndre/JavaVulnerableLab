@@ -13,4 +13,4 @@ jobs:
           SHIFTLEFT_ORG_ID: ${{ secrets.SHIFTLEFT_ORG }}
           SHIFTLEFT_ACCESS_TOKEN: ${{ secrets.SHIFTLEFT_ACCESS_TOKEN }}
         with:
-          args: "build -t preetamjinka/javavulnerablelab:latest ."
+          args: "build --build-arg SHIFTLEFT_ORG=$SHIFTLEFT_ORG_ID --build-arg SHIFTLEFT_ACCESS_TOKEN=$SHIFTLEFT_ACCESS_TOKEN -t preetamjinka/javavulnerablelab:latest ."
