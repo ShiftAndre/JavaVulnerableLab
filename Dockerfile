@@ -2,8 +2,8 @@
 FROM tomcat:8 AS shiftleft-stage
 
 # Shiftleft args
-ENV SHIFTLEFT_ORG ""
-ENV SHIFTLEFT_ACCESS_TOKEN ""
+ARG SHIFTLEFT_ORG
+ARG SHIFTLEFT_ACCESS_TOKEN
 
 # Download latest sl
 RUN curl -L https://www.shiftleft.io/download/sl-latest-linux-x64.tar.gz | tar xvz -C /usr/local/bin
