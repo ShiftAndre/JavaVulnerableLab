@@ -1,8 +1,14 @@
 ### ShiftLeft stage
 FROM tomcat:8 AS shiftleft-stage
 
+# Shiftleft args
+ENV SHIFTLEFT_ORG
+ENV SHIFTLEFT_ACCESS_TOKEN
+
 # Download latest sl
 RUN curl -L https://www.shiftleft.io/download/sl-latest-linux-x64.tar.gz | tar xvz -C /usr/local/bin
+# Configure sl
+RUN sl --no-diagnostic auth --org "$SHIFTLEFT_ORG" --token "$SHIFTLEFT_ACCESS_TOKEN"
 
 FROM tomcat:8
 
@@ -18,11 +24,6 @@ COPY . .
 RUN mvn clean package ; cp target/*.war /usr/local/tomcat/webapps/
 
 ### Analyze
-
-# Shiftleft args
-ARG SHIFTLEFT_ORG_ID
-ARG SHIFTLEFT_ACCESS_TOKEN
-
 RUN sl analyze --app jvl --wait
 
 ### Run
