@@ -10,7 +10,7 @@ jobs:
       - name: Docker build
         uses: actions/docker/cli@86ff551d26008267bb89ac11198ba7f1d807b699
         env:
-          org: ${{ secrets.org }}
-          token: ${{ secrets.token }}
+          SHIFTLEFT_ORG_ID: ${{ secrets.SHIFTLEFT_ORG }}
+          SHIFTLEFT_ACCESS_TOKEN: ${{ secrets.SHIFTLEFT_ACCESS_TOKEN }}
         with:
           args: "build -t preetamjinka/javavulnerablelab:latest ."
