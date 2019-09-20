@@ -2,13 +2,13 @@
 FROM tomcat:8 AS shiftleft-stage
 
 # Shiftleft args
-ARG org
-ARG token
+ARG SHIFTLEFT_ORG
+ARG SHIFTLEFT_ACCESS_TOKEN
 
 # Download latest sl
 RUN curl -L https://www.shiftleft.io/download/sl-latest-linux-x64.tar.gz | tar xvz -C /usr/local/bin
 # Configure sl
-RUN sl --no-diagnostic auth --org "$org" --token "$token"
+RUN sl --no-diagnostic auth --org "$SHIFTLEFT_ORG" --token "$SHIFTLEFT_ACCESS_TOKEN"
 
 FROM tomcat:8
 
