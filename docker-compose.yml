@@ -4,12 +4,14 @@ services:
     build:
       context: .
       args:
-        org: "${ORG}"
-        token: "${TOKEN}"
+        SHIFTLEFT_ORG: "${ORG}"
+        SHIFTLEFT_ACCESS_TOKEN: "${TOKEN}"
     ports:
       - 8080:8080
     links:
       - mysql
+    environment:
+      - SHIFTLEFT_SEC_MODE=REPORT
   mysql:
     image: mysql:5.7
     environment:
