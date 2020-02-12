@@ -9,12 +9,12 @@ ORGID=$SHIFTLEFT_ORG_ID
 echo $ORGID: $ORGID
 
 # Provide your application ID
-APPID=$SHIFTLEFT_APP_ID
+APPID=$1
 echo APPID: $APPID
 
 # Assume this is the "tag_key=tag_value" use case "branch=branch_name"
 TAG_KEY='branch'
-TAG_VALUE=$1  
+TAG_VALUE=$2  
 
 SL_PROTO='https'
 SL_HOST='www.shiftleft.io'
