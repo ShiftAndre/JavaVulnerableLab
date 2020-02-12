@@ -51,8 +51,8 @@ SUCCESS=`echo $BUILD_RESULT`
 case $SUCCESS in
   *"success"*)
     echo 'Successful'
-	exit 1;
+	exit 0;
 esac
 
 echo 'Fails based on ShiftLeft Inspect Build Rule'
-exit 0
+exit 1
