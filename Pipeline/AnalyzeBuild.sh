@@ -27,6 +27,10 @@ else
    SL_URL="$SL_PROTO://$SL_HOST/api/v3/public/org/$ORGID/app/$APPID/tag/$TAG_KEY/$TAG_VALUE/build"
 fi 
 
+echo ##############
+echo $SL_URL
+echo ##############
+
 BEARER='Authorization: Bearer '$PUBLIC_TOKEN
 BUILD_RESULT=$(curl --fail --show-error -X GET \
    $SL_URL \
