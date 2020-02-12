@@ -31,6 +31,13 @@ echo $SL_URL
 echo ##############
 
 BEARER='Authorization: Bearer '$PUBLIC_TOKEN
+echo $BEARER
+
+BUILD_URL="curl --fail --show-error -X GET $SL_URL -H 'Accept: */*' -H $BEARER -H 'Cache-Control: no-cache' -H 'Connection: keep-alive'   -H 'Host: $SL_HOST'   -H 'accept-encoding: text/plain, deflate' -H 'cache-control: no-cache' -H 'cookie: Cookie_3=value' -s -b Cookie_3=value"
+echo $BUILD_URL
+
+
+
 BUILD_RESULT=$(curl --fail --show-error -X GET \
    $SL_URL \
   -H 'Accept: */*' \
