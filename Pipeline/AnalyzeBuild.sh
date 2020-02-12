@@ -3,15 +3,14 @@ set -e
  
 # Provide your API public token
 PUBLIC_TOKEN=$SHIFTLEFT_API_TOKEN
-echo $PUBLIC_TOKEN
 
 # Provide your organization ID public token
 ORGID=$SHIFTLEFT_ORG_ID
-echo $ORGID
+echo $ORGID: $ORGID
 
 # Provide your application ID
 APPID=$SHIFTLEFT_APP_ID
-echo $APPID
+echo APPID: $APPID
 
 # Assume this is the "tag_key=tag_value" use case "branch=branch_name"
 TAG_KEY='branch'
