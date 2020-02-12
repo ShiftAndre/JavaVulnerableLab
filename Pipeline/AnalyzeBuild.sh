@@ -6,7 +6,7 @@ PUBLIC_TOKEN=$SHIFTLEFT_API_TOKEN
 
 # Provide your organization ID public token
 ORGID=$SHIFTLEFT_ORG_ID
-echo $ORGID: $ORGID
+echo ORGID: $ORGID
 
 # Provide your application ID
 APPID=$1
