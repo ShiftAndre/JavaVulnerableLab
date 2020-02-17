@@ -11,5 +11,4 @@ build_rules:
 #      - Sensitive Data Leak
 #    owasp_category:
 #      - a1-injection
-    
-      threshold: 100
+     threshold: 100
