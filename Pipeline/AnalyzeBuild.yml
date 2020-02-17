@@ -4,7 +4,7 @@ build_rules:
       - SEVERITY_LOW_IMPACT
 #      threshold: 100
 #      - SEVERITY_MEDIUM_IMPACT
-      - SEVERITY_HIGH_IMPACT
+#      - SEVERITY_HIGH_IMPACT
 #      threshold: 50
 #    type:
 #      - SQL Injection
