@@ -3,7 +3,7 @@ build_rules:
     severity:
       - SEVERITY_HIGH_IMPACT
     threshold: 600
-- id: Low Severity < 5
+  - id: Low Severity < 5
     severity:
       - SEVERITY_LOW_IMPACT
     threshold: 5
