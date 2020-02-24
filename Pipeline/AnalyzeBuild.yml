@@ -8,8 +8,9 @@ build_rules:
 #      - SQL Injection
 #      - Sensitive Data Leak
 #    owasp_category:
-#      - a1-injection  - id: High Severity < 600
+#      - a1-injection  
 # Second Build Rule
+- id: High Severity < 600
     severity:
       - SEVERITY_HIGH_IMPACT
     threshold: 600
