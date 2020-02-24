@@ -48,4 +48,4 @@ build_rules:
 #      - SQL Injection
 #      - Sensitive Data Leak
 #    owasp_category:
-#      - a1-injection  
+#      - owasp-a1  
