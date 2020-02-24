@@ -14,14 +14,25 @@ build_rules:
       - SEVERITY_HIGH_IMPACT
     threshold: 1000    
 # Next Build Rule
-  - id: Mixed Classes
+  - id: H+M+L
     severity:
       - SEVERITY_LOW_IMPACT
       - SEVERITY_HIGH_IMPACT
       - SEVERITY_MEDIUM_IMPACT
     threshold: 5000  
 # Next Build Rule
-  - id: Mixed Severity
+  - id: Types
+    type:
+      - SQL Injection
+      - Sensitive Data Leak
+    threshold: 5000  
+# Next Build Rule
+  - id: Categories
+    owasp_category:
+      - a1-injection       
+    threshold: 5000  
+# Next Build Rule
+  - id: Severity + Types + Classes
     severity:
       - SEVERITY_LOW_IMPACT
       - SEVERITY_HIGH_IMPACT
