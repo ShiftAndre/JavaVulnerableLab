@@ -12,7 +12,12 @@ build_rules:
   - id: High Severity
     severity:
       - SEVERITY_HIGH_IMPACT
-    threshold: 1000    
+    threshold: 1000
+# Next Build Rule
+  - id: Incorrect Severity
+    severity:
+      - SEVERITY_AWESOME_IMPACT
+    threshold: 1000       
 # Next Build Rule
   - id: H+M+L
     severity:
