@@ -31,12 +31,12 @@ build_rules:
       - SQL Injection
       - Sensitive Data Leak
     threshold: 5000  
-# Next Build Rule
+# Categories Build Rule
   - id: Categories
     owasp_category:
       - a1-injection       
     threshold: 5000  
-# Next Build Rule
+# Combined Build Rule
   - id: Severity + Types + Classes
     severity:
       - SEVERITY_LOW_IMPACT
