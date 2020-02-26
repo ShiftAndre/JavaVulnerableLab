@@ -12,7 +12,7 @@ build_rules:
   - id: High Severity
     severity:
       - SEVERITY_HIGH_IMPACT
-    threshold: 580
+    threshold: 585
 # Next Build Rule
   - id: Incorrect Severity
     severity:
