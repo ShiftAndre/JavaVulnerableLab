@@ -29,8 +29,7 @@ build_rules:
   - id: Types
     type:
       - SQL Injection
-      - Sensitive Data Leak
-    threshold: 5000  
+    threshold: 30
 # Categories Build Rule
   - id: Categories
     owasp_category:
