@@ -1,0 +1,28 @@
+node {
+    def mvnHome
+    def SHIFTLEFT_APPID = 'jvl_Jenkins_Simple'
+
+    stage('GitHub clone') {
+        //Get some code from GitHub repo
+        git 'https://github.com/ShiftAndre/JavaVulnerableLab.git'
+    }
+
+    stage('Build') {
+        // Run the maven build
+        sh 'echo $JAVA_HOME'
+        sh 'mvn -Dmaven.test.failure.ignore clean package'
+    }
+
+    stage('SL Analyze') {
+        //Optional withEnv: withEnv(['PATH+JAVAHOME=/usr/lib/jvm/java-1.8.0-amazon-corretto/jre/bin']){
+        sh '/usr/local/bin/sl analyze --wait --app '+"${SHIFTLEFT_APPID}"+ ' target/JavaVulnerableLab.war'
+    //Optional withEnv: }
+  }
+
+    // Post Scan Analysis Stage
+    // File source: https://github.com/ShiftAndre/JavaVulnerableLab/blob/master/Pipeline/AnalyzeBuild.yml
+    stage("Analyze Build Rules and Scan Success, using configurable YAML File"){
+        sh '/usr/local/bin/sl check-analysis --app '  + "${SHIFTLEFT_APPID}" +
+        ' --config ' + "./Pipeline/AnalyzeBuild.yml"
+    }   
+}
