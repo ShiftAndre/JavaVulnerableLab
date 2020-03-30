@@ -22,7 +22,6 @@ node {
     // Post Scan Analysis Stage
     // File source: https://github.com/ShiftAndre/JavaVulnerableLab/blob/master/Pipeline/AnalyzeBuild.yml
     stage("Analyze Build Rules and Scan Success, using configurable YAML File"){
-        sh '/usr/local/bin/sl check-analysis --app '  + "${SHIFTLEFT_APPID}" +
-        ' --config ' + "./Pipeline/AnalyzeBuild.yml"
+        sh '/usr/local/bin/sl check-analysis --app '  + "${SHIFTLEFT_APPID}" + ' --config ' + "./Pipeline/AnalyzeBuild.yml"
     }   
 }
